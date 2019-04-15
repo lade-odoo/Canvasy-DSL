@@ -1,4 +1,4 @@
-package canvasy.shapes
+package canvasy.elements
 
 import org.scalajs.dom
 

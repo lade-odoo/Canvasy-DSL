@@ -6,18 +6,19 @@ import dom.html
 import scala.Array._
 import scala.collection.mutable.ListBuffer
 
-import shapes.Shape
+import elements.CanvasyElement
 
 
-class Canvasy(val canvas: html.Canvas, val shapes: ListBuffer[Shape] = new ListBuffer[Shape]()) {
-  val context = canvas.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
+class Canvasy(val canvas: html.Canvas) {
+  private val elements: ListBuffer[CanvasyElement] = new ListBuffer[CanvasyElement]()
+  private val context = canvas.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
 
-  def += (added: Array[_ <: Shape]): Canvasy = {
-    shapes ++= added
+  def += (added: Array[_ <: CanvasyElement]): Canvasy = {
+    elements ++= added
     this
   }
 
   def draw() {
-    shapes.foreach(_.draw(context))
+    elements.foreach(_.draw(context))
   }
 }
