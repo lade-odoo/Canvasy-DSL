@@ -3,6 +3,7 @@ package tutorial.webapp
 import canvasy._
 import canvasy.elements._
 import canvasy.utils.ArrayUtils._
+import canvasy.utils.Color._
 
 import org.scalajs.dom
 import dom.{document, html}
@@ -33,7 +34,7 @@ object WebApp {
     canvasy += rectangles
 
     // the first way to edit elements is by modifying their properties directly
-    //circles(0) stroke rgb"#ee22aa"
+    circles(0) stroke rgb"#ee22aa"
     circles(0) stroke 12
     circles(1) translateY 50
 
