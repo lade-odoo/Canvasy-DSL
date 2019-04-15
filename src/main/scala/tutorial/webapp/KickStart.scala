@@ -31,6 +31,9 @@ object WebApp {
     canvasy += circles
     canvasy += rectangles
 
+    // the first way to edit elements is by modifying their properties directly
+    circles(1) translateY 50
+
     // let us draw all these things
     canvasy draw()
   }

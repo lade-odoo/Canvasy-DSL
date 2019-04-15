@@ -3,6 +3,7 @@ package canvasy
 import org.scalajs.dom
 import dom.html
 
+import scala.Array._
 import scala.collection.mutable.ListBuffer
 
 import shapes.Shape
@@ -17,8 +18,6 @@ class Canvasy(val canvas: html.Canvas, val shapes: ListBuffer[Shape] = new ListB
   }
 
   def draw() {
-    context.beginPath()
     shapes.foreach(_.draw(context))
-    context.stroke()
   }
 }

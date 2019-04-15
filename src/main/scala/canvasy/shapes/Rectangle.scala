@@ -3,9 +3,9 @@ package canvasy.shapes
 import org.scalajs.dom
 
 
-class Rectangle(width: Double, height: Double, x: Int, y: Int) extends Shape(x, y) {
+class Rectangle(width: Double, height: Double, var x: Int, var y: Int) extends Shape {
 
-  def draw(context: dom.CanvasRenderingContext2D) {
+  override def draw_shape(context: dom.CanvasRenderingContext2D) {
     context.moveTo(x, y)
     context.lineTo(x, y + height)
     context.lineTo(x + width, y + height)

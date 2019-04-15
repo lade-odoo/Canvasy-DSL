@@ -3,8 +3,11 @@ package canvasy.shapes
 import org.scalajs.dom
 
 
-abstract class Shape(var x: Int, var y: Int) {
-  
-  // Abstract method
-  def draw(context: dom.CanvasRenderingContext2D)
+trait Shape extends Drawable {
+  var x: Int
+  var y: Int
+
+
+  def translateY(delta: Int) { y += delta }
+  def translateX(delta: Int) { x += delta }
 }
