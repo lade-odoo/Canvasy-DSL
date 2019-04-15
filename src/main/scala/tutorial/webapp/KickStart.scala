@@ -2,6 +2,7 @@ package tutorial.webapp
 
 import canvasy._
 import canvasy.elements._
+import canvasy.utils.ArrayUtils._
 
 import org.scalajs.dom
 import dom.{document, html}
@@ -35,6 +36,15 @@ object WebApp {
     //circles(0) stroke rgb"#ee22aa"
     circles(0) stroke 12
     circles(1) translateY 50
+
+    // array/list/iterables... of elements form Groups. Groups have a position, and can be translated.
+    // this translates all the elements inside the group.
+    circles translateX 100 translateY 100
+
+    // easily create a group with the keyword "and"
+    circles(2) and circles(3) translateX 50
+
+    circles(2) translateX 22
 
     // let us draw all these things
     canvasy draw()

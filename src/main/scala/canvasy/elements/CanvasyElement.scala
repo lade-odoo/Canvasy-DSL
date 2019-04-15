@@ -12,5 +12,8 @@ trait CanvasyElement {
   def translateX(delta: Int) { x += delta }
 
 
+  def and(other: CanvasyElement) = Array(this, other)
+
+
   def draw(context: dom.CanvasRenderingContext2D)
 }

@@ -13,10 +13,7 @@ class Canvasy(val canvas: html.Canvas) {
   private val elements: ListBuffer[CanvasyElement] = new ListBuffer[CanvasyElement]()
   private val context = canvas.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
 
-  def += (added: Array[_ <: CanvasyElement]): Canvasy = {
-    elements ++= added
-    this
-  }
+  def += (added: Array[_ <: CanvasyElement]) = { elements ++= added; this }
 
   def draw() {
     elements.foreach(_.draw(context))
