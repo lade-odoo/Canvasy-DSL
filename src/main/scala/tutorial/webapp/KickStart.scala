@@ -18,7 +18,8 @@ object WebApp {
     canvas.width = w
     canvas.height = w
 
-    dslDemo(canvas)
+    // dslDemo(canvas)
+    dsl(canvas)
   }
 
   def dslDemo(canvas: html.Canvas) = {
@@ -48,6 +49,28 @@ object WebApp {
     circles(2) translateX 22
 
     // let us draw all these things
+    canvasy draw()
+  }
+
+  def dsl(canvas: html.Canvas) = {
+    val canvasy = new Canvasy(canvas)
+    val circles = Array.fill(4)(new Circle(50.0, 0, 0))
+    val rectangles = Array.tabulate(2)(i => new Rectangle(i*50, i*50, 50, 100))
+
+    canvasy += circles
+    canvasy += rectangles
+
+    circles(0) stroke rgb"#ee22aa"
+    circles(0) stroke 12
+    circles(1) translateY 50
+    circles(2) translateX 22
+
+    circles(2) and circles(3) translateX 50
+    circles translateX 100 translateY 100
+
+    circles animate_construction()
+    circles move_randomly(10)
+
     canvasy draw()
   }
 }

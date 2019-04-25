@@ -16,6 +16,9 @@ class Canvasy(val canvas: html.Canvas) {
   def += (added: Array[_ <: CanvasyElement]) = { elements ++= added; this }
 
   def draw() {
+    context.clearRect(0, 0, canvas.width, canvas.height)
     elements.foreach(_.draw(context))
+
+    dom.window.requestAnimationFrame((x: Double) => draw())
   }
 }
