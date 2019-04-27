@@ -20,8 +20,8 @@ object WebApp {
     canvas.width = w
     canvas.height = w
 
-    dslDemo(canvas)
-    // dsl(canvas)
+    // dslDemo(canvas)
+    dsl(canvas)
   }
 
   def dslDemo(canvas: html.Canvas) = {
