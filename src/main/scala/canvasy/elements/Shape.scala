@@ -3,6 +3,7 @@ package canvasy.elements
 import org.scalajs.dom
 
 import canvasy.utils.Color
+import canvasy.modifiers.{CanvasyElementModifier, ModifierApplier}
 
 
 trait Shape extends CanvasyElement {
@@ -13,6 +14,10 @@ trait Shape extends CanvasyElement {
 
   var is_moving_randomly: Boolean = false
   var random_step: Int = 1
+
+
+  // change should return the modifier to enable and
+  final def change(modif: CanvasyElementModifier[this.type]) = { modif.change(this); ModifierApplier(this) }
 
 
   final override def draw(context: dom.CanvasRenderingContext2D) {

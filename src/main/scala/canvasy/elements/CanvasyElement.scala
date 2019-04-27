@@ -22,6 +22,9 @@ trait CanvasyElement {
     }
   }
 
+  // Set the perimeter of the element
+  def size(size: Int)
+
 
   def and(other: CanvasyElement) = Array(this, other)
 
