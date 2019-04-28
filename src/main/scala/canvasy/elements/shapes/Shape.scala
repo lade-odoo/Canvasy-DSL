@@ -1,8 +1,9 @@
-package canvasy.elements
+package canvasy.elements.shapes
 
 import org.scalajs.dom
 
 import canvasy.utils.Color
+import canvasy.elements.{CanvasyElement, Stroke}
 import canvasy.modifiers.{CanvasyElementModifier, ModifierApplier}
 
 

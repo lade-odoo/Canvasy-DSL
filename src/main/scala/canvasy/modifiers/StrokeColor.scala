@@ -1,6 +1,6 @@
 package canvasy.modifiers
 
-import canvasy.elements.Shape
+import canvasy.elements.shapes.Shape
 
 import canvasy.utils.Color
 

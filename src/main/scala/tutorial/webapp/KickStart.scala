@@ -4,11 +4,13 @@ import canvasy._
 import canvasy.utils._
 import canvasy.elements._
 import canvasy.modifiers._
+import canvasy.elements.shapes._
 import canvasy.utils.ArrayUtils._
 import canvasy.utils.Color._
 
 import org.scalajs.dom
 import dom.{document, html}
+import org.scalajs.dom.raw.MouseEvent
 
 
 object WebApp {
@@ -105,9 +107,18 @@ object WebApp {
     circles(2) and circles(3) translateX 50
     circles translateX 100 translateY 100
 
-    circles animate_construction()
-    circles move_randomly(3)
+    // circles animate_construction()
+    // circles move_randomly(3)
 
     canvasy draw()
+
+    // canvas.onclick = { (evt: dom.MouseEvent) =>
+    //   val ctx = canvas.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
+    //   val rect = canvas.getBoundingClientRect()
+    //   val x = evt.clientX - rect.left
+    //   val y = evt.clientY - rect.top
+    //   println(x)
+    //   println(y)
+    // }
   }
 }

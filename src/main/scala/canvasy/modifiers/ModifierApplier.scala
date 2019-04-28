@@ -1,6 +1,6 @@
 package canvasy.modifiers
 
-import canvasy.elements.Shape
+import canvasy.elements.shapes.Shape
 
 
 class ModifierApplier(val elements: Array[Shape]) {
@@ -14,6 +14,7 @@ object ModifierApplier {
     obj match {
       case element: Shape => new ModifierApplier(Array(element))
       case elements: Array[Shape] => new ModifierApplier(elements)
+      case _ => ???
     }
   }
 }

@@ -1,6 +1,7 @@
 package canvasy.utils
 
-import canvasy.elements.{CanvasyElement, Shape}
+import canvasy.elements.CanvasyElement
+import canvasy.elements.shapes.Shape
 import canvasy.modifiers.{CanvasyElementModifier, ModifierApplier}
 
 

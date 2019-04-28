@@ -1,6 +1,6 @@
 package canvasy.modifiers
 
-import canvasy.elements.Circle
+import canvasy.elements.shapes.Circle
 
 
 case class Radius(r: Double) extends CanvasyElementModifier[Circle] {
