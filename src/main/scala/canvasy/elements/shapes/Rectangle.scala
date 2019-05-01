@@ -2,15 +2,20 @@ package canvasy.elements.shapes
 
 import org.scalajs.dom
 
+import canvasy.elements.properties.{Constructable, Animateable}
 
-class Rectangle(var width: Double, var height: Double, var x: Int, var y: Int) extends Shape {
+
+class Rectangle(var width: Double, var height: Double, var x: Int, var y: Int) extends Shape
+            with Constructable with Animateable {
 
   override def size(size: Int) = {
     width = (size - 2*height)/2
   }
 
-  override def draw_shape(context: dom.CanvasRenderingContext2D,  percentage: Int): Unit = {
-    var perimeter = 2 * (height + width) * percentage/100
+  override def draw_shape(context: dom.CanvasRenderingContext2D): Unit = {
+    var perimeter = 2 * (height + width) * construction_percentage/100
+    if(!is_constructed()) { super[Constructable].advance_construction }
+    else                  { super[Animateable].animate(this) }
 
     context.moveTo(x, y)
     perimeter -= height

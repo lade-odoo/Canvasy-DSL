@@ -3,6 +3,7 @@ package canvasy.utils
 import canvasy.elements.CanvasyElement
 import canvasy.elements.shapes.Shape
 import canvasy.modifiers.{CanvasyElementModifier, ModifierApplier}
+import canvasy.elements.properties.{Constructable, Animateable}
 
 
 object ArrayUtils {
@@ -14,9 +15,11 @@ object ArrayUtils {
     def change(modif: CanvasyElementModifier[T]) = { elements.foreach(modif.change(_)); ModifierApplier(elements) }
   }
 
-  implicit class ShapeArrayImprovements[T <: Shape](elements: Array[T]) {
-
+  implicit class ConstructableArray[T <: Constructable](elements: Array[T]) {
     def animate_construction() = { elements.foreach(_.animate_construction()); this }
-    def move_randomly(delta: Int = 1) = { elements.foreach(_.move_randomly(delta)); this }
+  }
+
+  implicit class AnimateableArray[T <: Animateable](elements: Array[T]) {
+    def animate() = { elements.foreach(_.enable_animation()); this }
   }
 }
