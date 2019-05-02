@@ -3,11 +3,12 @@ package canvasy.elements.shapes
 import org.scalajs.dom
 
 import canvasy.utils.Color
+import canvasy.elements.properties.Fillable
 import canvasy.elements.{CanvasyElement, Stroke}
 import canvasy.modifiers.{CanvasyElementModifier, ModifierApplier}
 
 
-trait Shape extends CanvasyElement {
+trait Shape extends CanvasyElement with Fillable {
   val stroke: Stroke = new Stroke()
 
 
@@ -20,6 +21,7 @@ trait Shape extends CanvasyElement {
     stroke.adapt_context(context)
 
     draw_shape(context)
+    super[Fillable].apply(context)
 
     context.stroke()
   }

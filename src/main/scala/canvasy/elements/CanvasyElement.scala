@@ -22,6 +22,7 @@ trait CanvasyElement {
       case _ => return
     }
   }
+  
 
   // Set the perimeter of the element
   def size(size: Int)

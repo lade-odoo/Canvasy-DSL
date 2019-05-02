@@ -107,8 +107,8 @@ object WebApp {
     circles(2) and circles(3) translateX 50
     circles translateX 100 translateY 100
 
-    rectangles animate_construction()
-    // circles move_randomly(3)
+    circles animate_construction()
+    circles animate()
 
     canvasy draw()
 

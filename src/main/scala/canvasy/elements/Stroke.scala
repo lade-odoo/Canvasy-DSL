@@ -21,5 +21,6 @@ class Stroke() {
   def adapt_context(context: dom.CanvasRenderingContext2D) {
     context.lineWidth = width
     context.strokeStyle = color.code
+    context.fillStyle = color.code
   }
 }

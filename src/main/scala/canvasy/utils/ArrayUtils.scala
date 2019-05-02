@@ -3,7 +3,7 @@ package canvasy.utils
 import canvasy.elements.CanvasyElement
 import canvasy.elements.shapes.Shape
 import canvasy.modifiers.{CanvasyElementModifier, ModifierApplier}
-import canvasy.elements.properties.{Constructable, Animateable}
+import canvasy.elements.properties.{Constructable, Animateable, Fillable}
 
 
 object ArrayUtils {
@@ -21,5 +21,9 @@ object ArrayUtils {
 
   implicit class AnimateableArray[T <: Animateable](elements: Array[T]) {
     def animate() = { elements.foreach(_.enable_animation()); this }
+  }
+
+  implicit class FillableArray[T <: Fillable](elements: Array[T]) {
+    def fill() = { elements.foreach(_.fill()); this }
   }
 }
