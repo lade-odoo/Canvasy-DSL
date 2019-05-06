@@ -1,9 +1,8 @@
 package canvasy.utils
 
 import canvasy.elements.CanvasyElement
-import canvasy.elements.shapes.Shape
 import canvasy.modifiers.{CanvasyElementModifier, ModifierApplier}
-import canvasy.elements.properties.{Constructable, Animateable, Fillable}
+import canvasy.elements.properties.{Constructable, Animateable, Fillable, Selectable}
 
 
 object ArrayUtils {
@@ -25,5 +24,9 @@ object ArrayUtils {
 
   implicit class FillableArray[T <: Fillable](elements: Array[T]) {
     def fill() = { elements.foreach(_.fill()); this }
+  }
+
+  implicit class SelectableArray[T <: Selectable](elements: Array[T]) {
+    def selectable() = { elements.foreach(_.selectable()); this }
   }
 }

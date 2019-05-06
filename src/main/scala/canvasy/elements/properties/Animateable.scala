@@ -11,14 +11,13 @@ trait Animateable {
 
 
   def enable_animation() = { enabled = true }
+  def is_animatable() = enabled
 
   def move(vx: Int, vy: Int)
   def is_on_x_border(max_x: Double, vx: Int): Boolean
   def is_on_y_border(max_y: Double, vy: Int): Boolean
 
-  def animate(element: Animateable, context: dom.CanvasRenderingContext2D): Unit = {
-    if(!enabled) { return }
-
+  def animate(element: Animateable, context: dom.CanvasRenderingContext2D) {
     val frame_rect = context.canvas.getBoundingClientRect()
     element.move(vx, vy)
 

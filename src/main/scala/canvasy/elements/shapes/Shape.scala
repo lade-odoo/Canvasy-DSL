@@ -2,13 +2,13 @@ package canvasy.elements.shapes
 
 import org.scalajs.dom
 
-import canvasy.utils.Color
-import canvasy.elements.properties.Fillable
 import canvasy.elements.{CanvasyElement, Stroke}
 import canvasy.modifiers.{CanvasyElementModifier, ModifierApplier}
+import canvasy.elements.properties._
 
 
-trait Shape extends CanvasyElement with Fillable {
+abstract class Shape extends CanvasyElement
+      with Constructable with Animateable with Selectable {
   val stroke: Stroke = new Stroke()
 
 
@@ -21,7 +21,10 @@ trait Shape extends CanvasyElement with Fillable {
     stroke.adapt_context(context)
 
     draw_shape(context)
-    super[Fillable].apply(context)
+    // super[Fillable].apply(context)
+
+    if(!super[Constructable].is_constructed())  { super[Constructable].advance_construction() }
+    else if(super[Animateable].is_animatable()) { super[Animateable].animate(this, context) }
 
     context.stroke()
   }

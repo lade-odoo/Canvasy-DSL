@@ -33,7 +33,7 @@ object WebApp {
     // Let us create some shapes
     val circles = Array.fill(4)(new Circle(50.0, 0, 0))
     val rectangles = Array.tabulate(2)(i => new Rectangle(i*50, i*50, 50, 100))
-
+    //
     // Tell the library to display both circles and rectangles in the canvas
     canvasy += circles
     canvasy += rectangles
@@ -94,10 +94,12 @@ object WebApp {
   def dsl(canvas: html.Canvas) = {
     val canvasy = new Canvasy(canvas)
     val circles = Array.fill(4)(new Circle(50.0, 0, 0))
-    val rectangles = Array.tabulate(2)(i => new Rectangle(i*50, i*50, 50, 100))
+    val rectangles = Array.tabulate(2)(i => new Rectangle(i*50, i*70, 50, 100))
+    val squares = Array(new Square(90, 90, 100))
 
     canvasy += circles
     canvasy += rectangles
+    canvasy += squares
 
     circles(0) stroke rgb"#ee22aa"
     circles(0) stroke 12
@@ -108,17 +110,17 @@ object WebApp {
     circles translateX 100 translateY 100
 
     circles animate_construction()
-    circles animate()
+    rectangles animate_construction()
+    squares animate_construction()
+
+    circles selectable()
+    rectangles selectable()
+    squares selectable()
+
+    // circles animate()
+    // rectangles animate()
+    // squares animate()
 
     canvasy draw()
-
-    // canvas.onclick = { (evt: dom.MouseEvent) =>
-    //   val ctx = canvas.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
-    //   val rect = canvas.getBoundingClientRect()
-    //   val x = evt.clientX - rect.left
-    //   val y = evt.clientY - rect.top
-    //   println(x)
-    //   println(y)
-    // }
   }
 }
