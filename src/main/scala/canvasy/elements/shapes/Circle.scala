@@ -2,7 +2,7 @@ package canvasy.elements.shapes
 
 import org.scalajs.dom
 
-import canvasy.elements.properties._
+import canvasy.properties._
 
 
 class Circle(var radius: Double, var x: Int, var y: Int) extends Shape {

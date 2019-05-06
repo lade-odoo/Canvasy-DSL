@@ -5,7 +5,7 @@ import org.scalajs.dom
 import canvasy.utils.{Color, PolygonUtils}
 import canvasy.elements.Point
 import canvasy.modifiers.{CanvasyElementModifier, ModifierApplier}
-import canvasy.elements.properties.{Constructable, Animateable, Selectable}
+import canvasy.properties.{Constructable, Animateable, Selectable}
 
 
 class Polygon(var points: Seq[Point]) extends Shape {
@@ -62,6 +62,8 @@ class Polygon(var points: Seq[Point]) extends Shape {
         return
       }
     }
+
+    context.closePath()
   }
 
 

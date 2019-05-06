@@ -1,4 +1,4 @@
-package canvasy.elements.properties
+package canvasy.properties
 
 
 trait Constructable {

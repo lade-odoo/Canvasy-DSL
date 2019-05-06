@@ -1,4 +1,4 @@
-package canvasy.elements.properties
+package canvasy.properties
 
 import org.scalajs.dom
 

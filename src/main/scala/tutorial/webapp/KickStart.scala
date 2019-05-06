@@ -7,6 +7,7 @@ import canvasy.modifiers._
 import canvasy.elements.shapes._
 import canvasy.utils.ArrayUtils._
 import canvasy.utils.Color._
+import canvasy.utils.LineJoin._
 
 import org.scalajs.dom
 import dom.{document, html}
@@ -96,10 +97,12 @@ object WebApp {
     val circles = Array.fill(4)(new Circle(50.0, 0, 0))
     val rectangles = Array.tabulate(2)(i => new Rectangle(i*50, i*70, 50, 100))
     val squares = Array(new Square(90, 90, 100))
+    val triangles = Array(new Triangle(20, 40, 150, 200))
 
     canvasy += circles
     canvasy += rectangles
     canvasy += squares
+    canvasy += triangles
 
     circles(0) stroke rgb"#ee22aa"
     circles(0) stroke 12
@@ -109,13 +112,22 @@ object WebApp {
     circles(2) and circles(3) translateX 50
     circles translateX 100 translateY 100
 
+    rectangles change StrokeColor(Color.red) and StrokeLineJoin(lj"round")
+
+    // circles fill()
+    // rectangles fill()
+    // squares animate_construction()
+    // triangles animate_construction()
+
     circles animate_construction()
     rectangles animate_construction()
     squares animate_construction()
+    triangles animate_construction()
 
     circles selectable()
     rectangles selectable()
     squares selectable()
+    triangles selectable()
 
     // circles animate()
     // rectangles animate()

@@ -7,7 +7,7 @@ import scala.Array._
 import scala.collection.mutable.ListBuffer
 
 import elements.CanvasyElement
-import elements.properties.Selectable
+import properties.Selectable
 
 
 class Canvasy(val canvas: html.Canvas) {

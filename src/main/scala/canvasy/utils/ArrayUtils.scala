@@ -2,7 +2,7 @@ package canvasy.utils
 
 import canvasy.elements.CanvasyElement
 import canvasy.modifiers.{CanvasyElementModifier, ModifierApplier}
-import canvasy.elements.properties.{Constructable, Animateable, Fillable, Selectable}
+import canvasy.properties.{Constructable, Animateable, Fillable, Selectable}
 
 
 object ArrayUtils {
