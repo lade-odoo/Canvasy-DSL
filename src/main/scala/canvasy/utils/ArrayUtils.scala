@@ -1,5 +1,7 @@
 package canvasy.utils
 
+import org.scalajs.dom
+
 import canvasy.elements.CanvasyElement
 import canvasy.modifiers.{CanvasyElementModifier, ModifierApplier}
 import canvasy.properties.{Constructable, Animateable, Fillable, Selectable}
@@ -20,6 +22,10 @@ object ArrayUtils {
 
   implicit class AnimateableArray[T <: Animateable](elements: Array[T]) {
     def animate() = { elements.foreach(_.enable_animation()); this }
+
+    def animate(animation: (Animateable, dom.CanvasRenderingContext2D, Int, Int) => (Int, Int)) = {
+      elements.foreach(_.enable_animation(animation)); this
+    }
   }
 
   implicit class FillableArray[T <: Fillable](elements: Array[T]) {

@@ -4,6 +4,7 @@ import canvasy._
 import canvasy.utils._
 import canvasy.elements._
 import canvasy.modifiers._
+import canvasy.properties.Animateable
 import canvasy.elements.shapes._
 import canvasy.utils.ArrayUtils._
 import canvasy.utils.Color._
@@ -101,8 +102,8 @@ object WebApp {
 
     canvasy += circles
     canvasy += rectangles
-    canvasy += squares
-    canvasy += triangles
+    // canvasy += squares
+    // canvasy += triangles
 
     circles(0) stroke rgb"#ee22aa"
     circles(0) stroke 12
@@ -129,8 +130,8 @@ object WebApp {
     squares selectable()
     triangles selectable()
 
-    // circles animate()
-    // rectangles animate()
+    circles animate()
+    rectangles animate(Animateable.rainbow_animation)
     // squares animate()
 
     canvasy draw()

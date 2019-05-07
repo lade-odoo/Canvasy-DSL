@@ -43,6 +43,7 @@ class Polygon(var points: Seq[Point]) extends Shape {
     x = xx; y = yy
   }
 
+
   final def draw_shape(context: dom.CanvasRenderingContext2D): Unit = {
     var perimeter = this.perimeter() * construction_percentage / 100
 
