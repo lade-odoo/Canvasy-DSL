@@ -46,9 +46,9 @@ class Polygon(var points: Seq[Point]) extends Shape {
 
   final def draw_shape(context: dom.CanvasRenderingContext2D): Unit = {
     var perimeter = this.perimeter() * construction_percentage / 100
+    context.moveTo(points(0).x, points(0).y)
 
     for(i <- 0 to (points.length - 1)) {
-      context.moveTo(points(i).x, points(i).y)
       val next = (i + 1) % points.length
       val segment_length = points(i).distance_from(points(next))
 
@@ -63,8 +63,6 @@ class Polygon(var points: Seq[Point]) extends Shape {
         return
       }
     }
-
-    context.closePath()
   }
 
 

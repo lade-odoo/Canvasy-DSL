@@ -99,11 +99,13 @@ object WebApp {
     val rectangles = Array.tabulate(2)(i => new Rectangle(i*50, i*70, 50, 100))
     val squares = Array(new Square(90, 90, 100))
     val triangles = Array(new Triangle(20, 40, 150, 200))
+    val images = Array(new Image(50, 50, 20, 20, "https://mdn.mozillademos.org/files/5397/rhino.jpg"))
 
-    canvasy += circles
-    canvasy += rectangles
+    // canvasy += circles
+    // canvasy += rectangles
     // canvasy += squares
     // canvasy += triangles
+    canvasy += images
 
     circles(0) stroke rgb"#ee22aa"
     circles(0) stroke 12
@@ -120,19 +122,21 @@ object WebApp {
     // squares animate_construction()
     // triangles animate_construction()
 
-    circles animate_construction()
-    rectangles animate_construction()
-    squares animate_construction()
-    triangles animate_construction()
+    // circles animate_construction()
+    // rectangles animate_construction()
+    // squares animate_construction()
+    // triangles animate_construction()
 
     circles selectable()
     rectangles selectable()
     squares selectable()
     triangles selectable()
+    images selectable()
 
-    circles animate()
-    rectangles animate(Animateable.rainbow_animation)
+    // circles animate()
+    // rectangles animate(Animateable.rainbow_animation)
     // squares animate()
+    // images animate()
 
     canvasy draw()
   }
