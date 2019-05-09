@@ -116,15 +116,15 @@ object WebApp {
     rectangles change StrokeColor(Color.red) and StrokeLineJoin(lj"round")
     triangles change StrokeFillStyle(Color.red)
 
-    // triangles fill()
+    triangles fill()
 
-    // rectangles dash()
+    rectangles dash()
 
     circles animate_construction()
     rectangles animate_construction()
     triangles animate_construction()
 
-    // triangles animate(Animateable.rainbow_animation)
+    triangles animate(Animateable.rainbow_animation)
 
     circles selectable()
     rectangles selectable()

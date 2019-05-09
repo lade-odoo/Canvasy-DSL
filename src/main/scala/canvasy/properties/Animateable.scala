@@ -10,8 +10,8 @@ import canvasy.utils.Color
 trait Animateable {
   private val random = scala.util.Random
   private var enabled: Boolean = false
-  private var vx: Int = random.nextInt(10)
-  private var vy: Int = random.nextInt(10)
+  private var vx: Int = random.nextInt(7)
+  private var vy: Int = random.nextInt(7)
   private var animation: (Animateable, dom.CanvasRenderingContext2D, Int, Int) => (Int, Int) = Animateable.default_animation
 
 
@@ -52,7 +52,6 @@ object Animateable {
     if(vxx != vx || vyy != vy) {
       element match {
         case e: Shape =>
-            println("new color")
             val color: Color = Color.random
             e change StrokeColor(color) and StrokeFillStyle(color)
         case _ =>
