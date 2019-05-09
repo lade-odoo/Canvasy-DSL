@@ -7,8 +7,6 @@ import canvasy.properties._
 
 class Circle(var radius: Double, var x: Int, var y: Int) extends Shape {
 
-  override def size(size: Int) = {}
-
   def adapt_position(mouse_x: Int, mouse_y: Int, offset_x: Int, offset_y: Int) {
     x = mouse_x + offset_x
     y = mouse_y + offset_y

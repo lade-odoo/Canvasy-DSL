@@ -51,7 +51,10 @@ object Animateable {
 
     if(vxx != vx || vyy != vy) {
       element match {
-        case e: Shape => val color: Color = Color.random; e change StrokeColor(color) and StrokeFillStyle(color)
+        case e: Shape =>
+            println("new color")
+            val color: Color = Color.random
+            e change StrokeColor(color) and StrokeFillStyle(color)
         case _ =>
       }
     }

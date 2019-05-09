@@ -97,15 +97,13 @@ object WebApp {
     val canvasy = new Canvasy(canvas)
     val circles = Array.fill(4)(new Circle(50.0, 0, 0))
     val rectangles = Array.tabulate(2)(i => new Rectangle(i*50, i*70, 50, 100))
-    val squares = Array(new Square(90, 90, 100))
     val triangles = Array(new Triangle(20, 40, 150, 200))
-    val images = Array(new Image(50, 50, 20, 20, "https://mdn.mozillademos.org/files/5397/rhino.jpg"))
+    val images = Array(new Image(100, 20, 0, 0, "https://uclouvain.be/sites/all/themes/ucltheme/logo.png?newdesign2018"))
 
-    // canvasy += circles
-    // canvasy += rectangles
-    // canvasy += squares
-    // canvasy += triangles
-    canvasy += images
+    canvasy += circles
+    canvasy += rectangles
+    canvasy += triangles
+    // canvasy += images
 
     circles(0) stroke rgb"#ee22aa"
     circles(0) stroke 12
@@ -116,27 +114,22 @@ object WebApp {
     circles translateX 100 translateY 100
 
     rectangles change StrokeColor(Color.red) and StrokeLineJoin(lj"round")
+    triangles change StrokeFillStyle(Color.red)
 
-    // circles fill()
-    // rectangles fill()
-    // squares animate_construction()
-    // triangles animate_construction()
+    // triangles fill()
 
-    // circles animate_construction()
-    // rectangles animate_construction()
-    // squares animate_construction()
-    // triangles animate_construction()
+    // rectangles dash()
+
+    circles animate_construction()
+    rectangles animate_construction()
+    triangles animate_construction()
+
+    // triangles animate(Animateable.rainbow_animation)
 
     circles selectable()
     rectangles selectable()
-    squares selectable()
     triangles selectable()
     images selectable()
-
-    // circles animate()
-    // rectangles animate(Animateable.rainbow_animation)
-    // squares animate()
-    // images animate()
 
     canvasy draw()
   }

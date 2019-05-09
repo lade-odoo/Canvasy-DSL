@@ -18,9 +18,6 @@ class Polygon(var points: Seq[Point]) extends Shape {
   def set_points(points: Seq[Point]) { this.points = points }
 
 
-  final def size(size: Int) {}
-
-
   final override def move(vx: Int, vy: Int) {
     points = points.map(p => Point(p.x + vx, p.y + vy))
   }

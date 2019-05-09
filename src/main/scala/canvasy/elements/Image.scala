@@ -8,9 +8,6 @@ import canvasy.properties.{Animateable, Selectable}
 class Image(var width: Int, var height: Int, var x: Int, var y: Int, src: String) extends CanvasyElement
         with Animateable with Selectable {
 
-  // Set the perimeter of the element
-  def size(size: Int) {}
-
 
   def adapt_position(mouse_x: Int, mouse_y: Int, offset_x: Int, offset_y: Int) {
     x = mouse_x + offset_x

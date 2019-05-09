@@ -11,6 +11,12 @@ class Stroke() {
   var fillStyle: Color = Color.black
   var lineJoin: LineJoin = LineJoin.default
 
+  var shadowBlur: Double = 0.0
+  var shadowColor: Color = Color.black
+  var shadowOffsetX: Double = 0.0
+  var shadowOffsetY: Double = 0.0
+
+
   def apply(o: Any) {
     o match {
       case i: Int => width = i
@@ -25,5 +31,10 @@ class Stroke() {
     context.strokeStyle = color.code
     context.fillStyle = fillStyle.code
     context.lineJoin = lineJoin.code
+
+    context.shadowBlur = shadowBlur
+    context.shadowColor = shadowColor.code
+    context.shadowOffsetX = shadowOffsetX
+    context.shadowOffsetY = shadowOffsetY
   }
 }

@@ -10,7 +10,7 @@ trait Fillable {
 
   def is_filled() = enabled
 
-  def apply(context: dom.CanvasRenderingContext2D) {
+  def apply_fill(context: dom.CanvasRenderingContext2D) {
     if(enabled) { context.closePath(); context.fill() }
   }
 }

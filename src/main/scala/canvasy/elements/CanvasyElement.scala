@@ -22,10 +22,10 @@ trait CanvasyElement {
       case _ => return
     }
   }
-  
 
-  // Set the perimeter of the element
-  def size(size: Int)
+
+  // Don't know what is means ==> Implemented as empty in order to compile
+  def size(size: Int) {}
 
 
   def and(other: CanvasyElement) = Array(this, other)

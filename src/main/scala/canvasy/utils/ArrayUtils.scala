@@ -4,7 +4,7 @@ import org.scalajs.dom
 
 import canvasy.elements.CanvasyElement
 import canvasy.modifiers.{CanvasyElementModifier, ModifierApplier}
-import canvasy.properties.{Constructable, Animateable, Fillable, Selectable}
+import canvasy.properties._
 
 
 object ArrayUtils {
@@ -30,6 +30,10 @@ object ArrayUtils {
 
   implicit class FillableArray[T <: Fillable](elements: Array[T]) {
     def fill() = { elements.foreach(_.fill()); this }
+  }
+
+  implicit class DashedArray[T <: Dashed](elements: Array[T]) {
+    def dash() = { elements.foreach(_.dash()); this }
   }
 
   implicit class SelectableArray[T <: Selectable](elements: Array[T]) {

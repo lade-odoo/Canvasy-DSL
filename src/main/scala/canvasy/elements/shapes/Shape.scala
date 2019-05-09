@@ -8,7 +8,7 @@ import canvasy.properties._
 
 
 abstract class Shape extends CanvasyElement
-      with Constructable with Animateable with Selectable with Fillable {
+      with Constructable with Animateable with Selectable with Fillable with Dashed {
   val stroke: Stroke = new Stroke()
 
 
@@ -18,11 +18,12 @@ abstract class Shape extends CanvasyElement
 
   final override def draw(context: dom.CanvasRenderingContext2D) {
     context.beginPath()
+    super[Dashed].apply_dash(context)
     draw_shape(context)
 
     stroke.adapt_context(context)
     context.stroke()
-    super[Fillable].apply(context)
+    super[Fillable].apply_fill(context)
 
     if(!super[Constructable].is_constructed())  { super[Constructable].advance_construction() }
     else if(super[Animateable].is_animatable()) { super[Animateable].animate(this, context) }
