@@ -20,7 +20,7 @@ object WebApp {
     val canvas = document.createElement("canvas").asInstanceOf[html.Canvas]
     document.body.appendChild(canvas)
 
-    val w = 300
+    val w = 600
     canvas.width = w
     canvas.height = w
 
@@ -96,8 +96,8 @@ object WebApp {
   def dsl(canvas: html.Canvas) = {
     val canvasy = new Canvasy(canvas)
     val circles = Array.fill(4)(new Circle(50.0, 0, 0))
-    val rectangles = Array.tabulate(2)(i => new Rectangle(i*50, i*70, 50, 100))
-    val triangles = Array(new Triangle(20, 40, 150, 200))
+    val rectangles = Array.tabulate(2)(i => new Rectangle(i*50, i*70, 300, 200))
+    val triangles = Array(new Triangle(70, 100, 100, 200))
     val images = Array(new Image(100, 20, 0, 0, "https://uclouvain.be/sites/all/themes/ucltheme/logo.png?newdesign2018"))
 
     canvasy += circles
@@ -111,7 +111,7 @@ object WebApp {
     circles(2) translateX 22
 
     circles(2) and circles(3) translateX 50
-    circles translateX 100 translateY 100
+    circles translateX 200 translateY 200
 
     rectangles change StrokeColor(Color.red) and StrokeLineJoin(lj"round")
     triangles change StrokeFillStyle(Color.red)
