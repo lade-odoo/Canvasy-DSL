@@ -1,3 +1,3 @@
-# The Scala.js tutorial
+# Canvasy DSL Project
 
-This repository contains the code accompanying the [Scala.js tutorial](http://www.scala-js.org/doc/tutorial.html)
+This project was used to get in touch with Canvasy and programming models.
